@@ -1,0 +1,41 @@
+.blue-bar {
+  rect {
+    stroke: white;
+    fill: steelblue;
+  }
+
+  text {
+    fill: black;
+    text-anchor: end;
+
+    &.white-label {
+      fill: white;
+    }
+  }
+}
+
+.president {
+  padding: 10px;
+
+  .label {
+    font-size: 100%;
+  }
+  .tick text,
+  .axis.title {
+    font-size: 12px !important;
+  }
+  
+  .panel {
+    .inline-block;
+    vertical-align: top;
+  }
+
+  .year-slider {
+    width: 550px;
+    padding: 10px 0;
+  }
+}
+
+#president-count {
+  color: #008000;
+}
