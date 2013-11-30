@@ -660,6 +660,16 @@ th.hidden-lg,td.hidden-lg{display:table-cell !important;}
 input[type='range'] {
   cursor: pointer;
 }
+.gallery ul {
+  padding: 0;
+}
+.gallery li {
+  display: inline-block;
+  margin: 20px 0 0 20px;
+  padding: 10px;
+  border: solid 1px gray;
+  cursor: pointer;
+}
 .blue-bar rect {
   stroke: white;
   fill: steelblue;
@@ -724,43 +734,4 @@ h4 {
 .attention-text {
   font-weight: bold;
   color: orange;
-}
-.sidebar-menu {
-  position: fixed;
-  left: 5px;
-  top: 10px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  width: 50px;
-  text-align: center;
-  opacity: 0.2;
-  background-color: white;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-}
-.sidebar-menu:hover {
-  opacity: 1;
-}
-.sidebar-menu .fa {
-  color: #428bca;
-  font-size: 40px;
-  cursor: pointer;
-}
-.sidebar-menu .fa:hover {
-  color: #285e8e;
-}
-.sidebar-menu .fa.text-icon {
-  font-size: 25px;
-  font-weight: bold;
-}
-.sidebar-menu .fa-cog {
-  padding-bottom: 10px;
-}
-.popover-title {
-  display: none;
-}
-.popover {
-  max-width: 1000px !important;
 }

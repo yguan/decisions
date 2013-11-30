@@ -1,0 +1,7 @@
+<div ng-controller="GalleryCtrl" class="gallery">
+    <ul ng-click="openVisualization($event)">
+        <li ng-repeat="viz in visualizations" data-viz="{{viz.id}}">
+            {{viz.id}}
+        </li>
+    </ul>
+</div>

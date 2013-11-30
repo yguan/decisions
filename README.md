@@ -1,16 +1,12 @@
-# D3 Interactive
+# Decision Making Visualizations
 
-This repository contains the source code showing how to build interactive d3 charts that support data exploration similar to [dc.js](http://nickqizhu.github.io/dc.js/), but with the flexibility of choose any kind of charting framework you like.
+This repository contains the source code for decision making visualizations.
 
 ## Demo
 
-It's hosted [here](http://yguan.github.io/repos/d3-interactive/).
+It's hosted [here](http://yguan.github.io/repos/decisions/).
 
-[![](http://yguan.github.io/img/projects/d3-interactive.png)](http://yguan.github.io/repos/d3-interactive/)
-
-## Credit
-
-I learned more about crossfilter and got the visualization idea from John Hitchings' [post](http://eng.wealthfront.com/2012/09/explore-your-multivariate-data-with-crossfilter.html).
+[![](http://yguan.github.io/img/projects/decisions.png)](http://yguan.github.io/repos/decisions/)
 
 ## Development
 

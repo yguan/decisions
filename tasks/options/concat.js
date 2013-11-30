@@ -21,10 +21,14 @@ module.exports = {
             '<%= folder.src %>/js/extension/lodash.underscore.js',
             '<%= folder.src %>/js/lib/jquery.js',
             '<%= folder.src %>/js/lib/microevent.js',
-            '<%= folder.src %>/js/lib/databind.js',
             '<%= folder.src %>/js/lib/bootstrap.js',
             '<%= folder.src %>/js/lib/crossfilter.js',
+            '<%= folder.src %>/js/lib/from.js',
             '<%= folder.src %>/js/lib/dimple.v1.1.2.js',
+            '<%= folder.src %>/js/lib/angular/angular.js',
+            '<%= folder.src %>/js/lib/angular/angular-route.js',
+            '<%= folder.src %>/js/lib/angular/angular-mobile.js',
+            '<%= folder.src %>/js/lib/angular/angular-strap.js',
             '<%= folder.src %>/js/lib/require.js'
         ],
         dest: '<%= folder.src %>/js/all-lib-no-d3.js'

@@ -15,5 +15,5 @@ require.config({
 
 require(['view/all-views'], function (views) {
     'use strict';
-    views.render();
+    views.init();
 });

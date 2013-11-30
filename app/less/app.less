@@ -1,4 +1,5 @@
 @import "common";
+@import "gallery";
 @import "chart";
 
 @view-padding: 70px;
@@ -50,35 +51,4 @@ h4 {
 .attention-text {
   font-weight: bold;
   color: orange;
-}
-
-.sidebar-menu {
-  position: fixed;
-  left: 5px;
-  top: 10px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  width: 50px;
-  text-align: center;
-  opacity: 0.2;
-  background-color: white;
-  .rounded-corners(5px);
-
-  &:hover {
-    opacity: 1;
-  }
-
-  .default-fa-style(40px);
-
-  .fa-cog {
-    padding-bottom: 10px;
-  }
-}
-
-.popover-title {
-  display: none;
-}
-.popover {
-  max-width: 1000px !important;
 }
