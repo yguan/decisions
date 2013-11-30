@@ -26,6 +26,7 @@ module.exports = {
             '<%= folder.src %>/js/lib/from.js',
             '<%= folder.src %>/js/lib/dimple.v1.1.2.js',
             '<%= folder.src %>/js/lib/angular/angular.js',
+            '<%= folder.src %>/js/lib/angular/angular-animate.js',
             '<%= folder.src %>/js/lib/angular/angular-route.js',
             '<%= folder.src %>/js/lib/angular/angular-mobile.js',
             '<%= folder.src %>/js/lib/angular/angular-strap.js',

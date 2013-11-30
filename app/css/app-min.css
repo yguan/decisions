@@ -660,6 +660,23 @@ th.hidden-lg,td.hidden-lg{display:table-cell !important;}
 input[type='range'] {
   cursor: pointer;
 }
+.animate-appear .viewport.ng-enter {
+  -webkit-transition: 1s;
+  transition: 1s;
+  margin-left: 100%;
+  position: absolute;
+}
+.animate-appear .viewport.ng-enter-active {
+  margin-left: 0;
+}
+.animate-appear .viewport.ng-leave {
+  -webkit-transition: 1s;
+  transition: 1s;
+  margin-left: 0;
+}
+.animate-appear .viewport.ng-leave-active {
+  margin-left: -100%;
+}
 .gallery ul {
   padding: 0;
 }
@@ -734,4 +751,21 @@ h4 {
 .attention-text {
   font-weight: bold;
   color: orange;
+}
+.viewport.ng-enter {
+  -webkit-transition: 1s;
+  transition: 1s;
+  margin-left: 100%;
+  position: absolute;
+}
+.viewport.ng-enter-active {
+  margin-left: 0;
+}
+.viewport.ng-leave {
+  -webkit-transition: 1s;
+  transition: 1s;
+  margin-left: 0;
+}
+.viewport.ng-leave-active {
+  margin-left: -100%;
 }

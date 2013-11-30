@@ -102,3 +102,27 @@
 input[type='range'] {
   cursor: pointer;
 }
+
+.animate-appear {
+  .viewport.ng-enter {
+    -webkit-transition: 1s;
+    transition: 1s;
+    margin-left: 100%;
+    position: absolute;
+  }
+
+  .viewport.ng-enter-active {
+    margin-left: 0;
+  }
+
+  .viewport.ng-leave {
+    -webkit-transition: 1s;
+    transition: 1s;
+
+    margin-left: 0;
+  }
+
+  .viewport.ng-leave-active {
+    margin-left: -100%;
+  }
+}

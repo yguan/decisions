@@ -24,6 +24,7 @@ define(function (require, exports, module) {
         angular.element(document).ready(function () {
             var app = angular.module('decision', [
                 'ngRoute',
+                'ngAnimate',
                 '$strap.directives'
             ]);
 
