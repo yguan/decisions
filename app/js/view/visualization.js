@@ -3,6 +3,8 @@
 define(function (require, exports, module) {
     'use strict';
 
+    var chartRepository = require('view/chart-repository');
+
     exports.name = 'VisualizationCtrl';
     exports.controller = function ($scope, $location) {
         $scope.getId = function () {
@@ -12,5 +14,9 @@ define(function (require, exports, module) {
         $scope.back = function () {
             $location.url('/gallery');
         };
+
+        $('#charts').empty();
+        var chart = chartRepository.getChart('stockReturn');
+        chart.render('#charts', chart.data);
     };
 });

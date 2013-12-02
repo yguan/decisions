@@ -5,7 +5,7 @@ define(function (require, exports, module) {
     'use strict';
 
     var gallery = require('view/gallery'),
-        visualization = require('view/visualization');
+        stockReturn = require('view/stock-return');
 
     function registerController(app, controller) {
         app.controller(controller.name, ['$scope', '$location', '$document', '$timeout', '$modal', controller.controller]);
@@ -15,7 +15,7 @@ define(function (require, exports, module) {
         app.config(function ($routeProvider, $locationProvider) {
             $routeProvider
                 .when('/gallery', {templateUrl: 'js/view/partial/gallery.html', controller: gallery.name})
-                .when('/visualization', {templateUrl: 'js/view/partial/visualization.html', controller: visualization.name})
+                .when('/stock-return', {templateUrl: 'js/view/partial/stock-return.html', controller: stockReturn.name})
                 .otherwise({redirectTo: '/gallery'});
         });
     }
@@ -30,7 +30,7 @@ define(function (require, exports, module) {
 
             configViewRouting(app);
             registerController(app, gallery);
-            registerController(app, visualization);
+            registerController(app, stockReturn);
             angular.bootstrap(document, ['decision']);
         });
     };

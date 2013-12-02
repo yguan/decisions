@@ -1,0 +1,12 @@
+<div ng-controller="StockReturnCtrl" class="visualization stock-return">
+    <div class="btn btn-default" ng-click="back()"><span class="fa fa-arrow-left"></span> Back</div>
+    <br /><br />
+    <div class="input-group investment">
+        <span class="input-group-addon">Initial Investment ($)</span>
+        <input type="number" class="form-control money" ng-model="initialInvestment" min="1" max="1000000000">
+        <span class="input-group-addon">Start Investing in year</span>
+        <input type="number" class="form-control year" ng-model="startYear" min="1970" max="2013" value="1970">
+        <span class="input-group-addon">Result in Investment Total in 2013: <b>{{investmentReturn | currency}}</b></span>
+    </div>
+    <div id="chart"></div>
+</div>

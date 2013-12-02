@@ -687,37 +687,14 @@ input[type='range'] {
   border: solid 1px gray;
   cursor: pointer;
 }
-.blue-bar rect {
-  stroke: white;
-  fill: steelblue;
+.stock-return .investment {
+  width: 600px;
 }
-.blue-bar text {
-  fill: black;
-  text-anchor: end;
+.stock-return .year {
+  width: 70px !important;
 }
-.blue-bar text.white-label {
-  fill: white;
-}
-.president {
-  padding: 10px;
-}
-.president .label {
-  font-size: 100%;
-}
-.president .tick text,
-.president .axis.title {
-  font-size: 12px !important;
-}
-.president .panel {
-  display: inline-block;
-  vertical-align: top;
-}
-.president .year-slider {
-  width: 550px;
-  padding: 10px 0;
-}
-#president-count {
-  color: #008000;
+.stock-return .money {
+  width: 160px !important;
 }
 .default-font {
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
