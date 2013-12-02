@@ -47,7 +47,8 @@ define(function (require, exports, module) {
         {Year: 2009, AnnualReturn: 23.49},
         {Year: 2010, AnnualReturn: 12.64},
         {Year: 2011, AnnualReturn: 0.00},
-        {Year: 2012, AnnualReturn: 13.29}
+        {Year: 2012, AnnualReturn: 13.29},
+        {Year: 2013, AnnualReturn: 26.62}
     ];
     exports.data = data;
 });
