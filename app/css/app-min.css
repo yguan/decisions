@@ -661,8 +661,8 @@ input[type='range'] {
   cursor: pointer;
 }
 .animate-appear .viewport.ng-enter {
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 400ms;
+  transition: 400ms;
   margin-left: 100%;
   position: absolute;
 }
@@ -670,12 +670,22 @@ input[type='range'] {
   margin-left: 0;
 }
 .animate-appear .viewport.ng-leave {
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 400ms;
+  transition: 400ms;
   margin-left: 0;
 }
 .animate-appear .viewport.ng-leave-active {
   margin-left: -100%;
+}
+.icon-spin {
+  display: inline-block;
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  -webkit-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
+.ng-hide {
+  display: none !important;
 }
 .gallery ul {
   padding: 0;
@@ -689,6 +699,12 @@ input[type='range'] {
 }
 .visualization {
   padding: 10px;
+}
+.visualization .chart-title {
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: gray;
 }
 .stock-return .investment {
   width: 600px;
@@ -733,8 +749,8 @@ h4 {
   color: orange;
 }
 .viewport.ng-enter {
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 400ms;
+  transition: 400ms;
   margin-left: 100%;
   position: absolute;
 }
@@ -742,8 +758,8 @@ h4 {
   margin-left: 0;
 }
 .viewport.ng-leave {
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 400ms;
+  transition: 400ms;
   margin-left: 0;
 }
 .viewport.ng-leave-active {

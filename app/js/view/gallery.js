@@ -8,20 +8,21 @@ define(function (require, exports, module) {
     };
 
     exports.name = 'GalleryCtrl';
-    exports.controller = function ($scope, $location) {
+    exports.controller = function ($scope, $location, $document, $timeout) {
         function getVizUrl(vizId) {
             return chartUrl[vizId];
         }
 
-        $scope.openVisualization = function ($event) {
-            var vizId = $($event.target).data('viz'),
-                url = getVizUrl(vizId);
-            $location.url(url);
+        $scope.openVisualization = function (viz) {
+            var url = getVizUrl(viz.id);
+            viz.isLoading = true;
+            $timeout(function () {
+                $location.url(url);
+            }, 100);
         };
 
         $scope.visualizations = [
-            {id: 'stockReturn'},
-            {id: 2}
+            {id: 'stockReturn', label: 'Investment Return in S&P 500', isLoading: false}
         ];
     };
 });

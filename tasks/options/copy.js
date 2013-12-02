@@ -9,7 +9,8 @@ module.exports = {
                     '*.png',
                     '*.js',
                     'fonts/**',
-                    'img/**'
+                    'img/**',
+                    'js/view/partial/**'
                 ],
                 dest: '<%= folder.distTemp %>/'
             },

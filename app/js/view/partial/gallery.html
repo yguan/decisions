@@ -1,7 +1,8 @@
 <div ng-controller="GalleryCtrl" class="gallery">
-    <ul ng-click="openVisualization($event)">
-        <li ng-repeat="viz in visualizations" data-viz="{{viz.id}}">
-            {{viz.id}}
+    <ul >
+        <li ng-repeat="viz in visualizations" data-viz="{{viz.id}}" ng-click="openVisualization(viz)">
+            <span class="fa fa-refresh icon-spin" ng-hide="!viz.isLoading"></span>
+            {{viz.label}}
         </li>
     </ul>
 </div>

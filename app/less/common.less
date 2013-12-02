@@ -103,10 +103,12 @@ input[type='range'] {
   cursor: pointer;
 }
 
+@animateDuration: 400ms;
+
 .animate-appear {
   .viewport.ng-enter {
-    -webkit-transition: 1s;
-    transition: 1s;
+    -webkit-transition: @animateDuration;
+    transition: @animateDuration;
     margin-left: 100%;
     position: absolute;
   }
@@ -116,8 +118,8 @@ input[type='range'] {
   }
 
   .viewport.ng-leave {
-    -webkit-transition: 1s;
-    transition: 1s;
+    -webkit-transition: @animateDuration;
+    transition: @animateDuration;
 
     margin-left: 0;
   }
@@ -125,4 +127,16 @@ input[type='range'] {
   .viewport.ng-leave-active {
     margin-left: -100%;
   }
+}
+
+.icon-spin {
+  display: inline-block;
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  -webkit-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
+
+.ng-hide {
+  display: none !important;
 }

@@ -19,10 +19,27 @@ define(function (require, exports, module) {
         $scope.initialInvestment = 10000;
         $scope.startYear = 1970;
 
-        stockReturn.filterStockReturn($scope.initialInvestment, $scope.startYear);
-        $scope.investmentReturn = stockReturn.data[stockReturn.data.length - 1].Investment;
+        function filterStockReturn(initialInvestment, startYear) {
+            stockReturn.filterStockReturn(initialInvestment, startYear);
+            $scope.investmentReturn = stockReturn.data[stockReturn.data.length - 1].Investment;
+        }
 
-        $('#chart').empty();
-        chart.render('#chart', stockReturn);
+        function initChart() {
+            var $chartContainer = $('#chart');
+            if ($chartContainer.find('svg').length === 0) {
+                filterStockReturn($scope.initialInvestment, $scope.startYear);
+                chart.render('#chart', stockReturn);
+            }
+        }
+
+        initChart();
+
+        $scope.$watch('startYear', function (newVal, oldVal) {
+            filterStockReturn($scope.initialInvestment, newVal);
+        });
+
+        $scope.$watch('initialInvestment', function (newVal, oldVal) {
+            filterStockReturn(newVal, $scope.startYear);
+        });
     };
 });
