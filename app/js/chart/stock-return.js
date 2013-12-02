@@ -4,7 +4,7 @@ define(function (require, exports, module) {
     'use strict';
 
     function setBounds(chart, widthBound) {
-        chart.setBounds(50, 20, widthBound, 320);
+        chart.setBounds(70, 20, widthBound, 470);
     }
 
     function render(container, stockReturns) {
@@ -12,23 +12,26 @@ define(function (require, exports, module) {
             barWidth = 20,
             maxBars = data.length,
             maxWidthBound = barWidth * maxBars,
-            svg = dimple.newSvg(container, maxWidthBound + 120, 400),
+            svg = dimple.newSvg(container, maxWidthBound + 160, 550),
             chart = new dimple.chart(svg, data),
             y,
             yearAxis,
-            sp500Return,
+            sp500ReturnAxis,
             investmentAxis;
 
         setBounds(chart, maxWidthBound);
         yearAxis = chart.addCategoryAxis('x', 'Year');
         yearAxis.tickFormat = 'g';
-        sp500Return = chart.addMeasureAxis('y', 'S&P 500 Annual Return (%)');
-        sp500Return.overrideMin = -40;
-        sp500Return.overrideMax = 40;
-        chart.addSeries('', dimple.plot.bar, [yearAxis, sp500Return]);
+        sp500ReturnAxis = chart.addMeasureAxis('y', 'S&P 500 Annual Return');
+        sp500ReturnAxis.tickFormat = '%';
+        sp500ReturnAxis.overrideMin = -0.4;
+        sp500ReturnAxis.overrideMax = 0.4;
+        chart.addSeries('Year', dimple.plot.bar, [yearAxis, sp500ReturnAxis]);
 
         investmentAxis = chart.addMeasureAxis('y', 'Investment');
-        chart.addSeries('', dimple.plot.line, [yearAxis, investmentAxis]);
+        investmentAxis.tickFormat = '$,.0f';
+        chart.addSeries(' ', dimple.plot.line, [yearAxis, investmentAxis]);
+        chart.assignColor(' ', 'green');
         chart.draw();
 
         // presidents triggers change event when presidentDw.filterByBeforeBirthYear is called

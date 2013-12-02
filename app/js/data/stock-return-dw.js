@@ -19,14 +19,15 @@ define(['exports', 'data/sp500-annual-return'], function (exports, sp500AnnualRe
 
         _.each(newData, function (value, index) {
             var preIndex = index - 1,
-                investment = preIndex < 0 ? initialInvestment: calculateInvestmentReturn(newData[preIndex].Investment, newData[preIndex].AnnualReturn);
+                investment = preIndex < 0 ? initialInvestment : calculateInvestmentReturn(newData[preIndex].Investment, newData[preIndex].AnnualReturn);
             value.Investment = investment;
-            value['S&P 500 Annual Return (%)'] = value.AnnualReturn;
+            value['S&P 500 Annual Return'] = value.AnnualReturn / 100;
         });
 
         stockReturn.data = newData;
         stockReturn.trigger('change');
     }
+
     stockReturn.filterStockReturn = filterStockReturn;
 
     exports.stockReturn = stockReturn;

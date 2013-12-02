@@ -77,6 +77,9 @@ input[type='range'] {
   border: solid 1px gray;
   cursor: pointer;
 }
+.visualization {
+  padding: 10px;
+}
 .stock-return .investment {
   width: 600px;
 }
