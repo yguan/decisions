@@ -9,6 +9,7 @@ define(function (require, exports, module) {
 
     function render(container, stockReturns) {
         var data = stockReturns.data,
+            maxInvestment = _.max(data, function(value){ return value.Investment; }).Investment,
             barWidth = 20,
             maxBars = data.length,
             maxWidthBound = barWidth * maxBars,
@@ -17,26 +18,31 @@ define(function (require, exports, module) {
             y,
             yearAxis,
             sp500ReturnAxis,
-            investmentAxis;
+            investmentAxis,
+            investmentSeries;
 
         setBounds(chart, maxWidthBound);
         yearAxis = chart.addCategoryAxis('x', 'Year');
         yearAxis.tickFormat = 'g';
         sp500ReturnAxis = chart.addMeasureAxis('y', 'S&P 500 Annual Return');
-        sp500ReturnAxis.tickFormat = '%';
-        sp500ReturnAxis.overrideMin = -0.4;
+        sp500ReturnAxis.tickFormat = '.3p';
+        sp500ReturnAxis.overrideMin = -0.8;
         sp500ReturnAxis.overrideMax = 0.4;
         chart.addSeries('Year', dimple.plot.bar, [yearAxis, sp500ReturnAxis]);
 
         investmentAxis = chart.addMeasureAxis('y', 'Investment');
+        investmentAxis.overrideMin = 0;
+        investmentAxis.overrideMax = maxInvestment * 3;
         investmentAxis.tickFormat = '$,.0f';
-        chart.addSeries(' ', dimple.plot.line, [yearAxis, investmentAxis]);
-        chart.assignColor(' ', 'green');
+        investmentSeries = chart.addSeries(' ', dimple.plot.bar, [yearAxis, investmentAxis]);
+        chart.assignColor(' ', '#348017');
         chart.draw();
 
-        // presidents triggers change event when presidentDw.filterByBeforeBirthYear is called
         stockReturns.bind('change', function () {
-            chart.data = stockReturns.data;
+            data = stockReturns.data;
+            chart.data = data;
+            maxInvestment = _.max(data, function(value){ return value.Investment; }).Investment;
+            investmentAxis.overrideMax = maxInvestment * 3;
             setBounds(chart, chart.data.length * barWidth);
             chart.draw();
         });
