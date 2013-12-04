@@ -28,8 +28,8 @@ define(['exports', 'data/sp500-annual-return'], function (exports, sp500AnnualRe
         _.each(newData, function (value, index) {
             var preIndex = index - 1,
                 investment = preIndex < 0
-                    ? initialInvestment
-                    : calculateInvestmentReturn(newData[preIndex].Investment + extraInvestmentEachYear, newData[preIndex].AnnualReturn);
+                    ? calculateInvestmentReturn(initialInvestment, newData[0].AnnualReturn)
+                    : calculateInvestmentReturn(newData[preIndex].Investment + extraInvestmentEachYear, newData[index].AnnualReturn);
             value.Investment = investment;
         });
 
