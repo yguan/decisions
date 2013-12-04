@@ -100,10 +100,10 @@ input[type='range'] {
   width: 600px;
 }
 .stock-return .year {
-  width: 70px !important;
+  width: 72px !important;
 }
 .stock-return .money {
-  width: 160px !important;
+  width: 110px !important;
 }
 .default-font {
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
