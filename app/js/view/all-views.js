@@ -8,14 +8,14 @@ define(function (require, exports, module) {
         stockReturn = require('view/stock-return');
 
     function registerController(app, controller) {
-        app.controller(controller.name, ['$scope', '$location', '$document', '$timeout', '$modal', controller.controller]);
+        app.controller(controller.name, ['$scope', '$location', '$routeParams', '$document', '$timeout', '$modal', controller.controller]);
     }
 
     function configViewRouting(app) {
         app.config(function ($routeProvider, $locationProvider) {
             $routeProvider
                 .when('/gallery', {templateUrl: 'js/view/partial/gallery.html', controller: gallery.name})
-                .when('/stock-return', {templateUrl: 'js/view/partial/stock-return.html', controller: stockReturn.name})
+                .when('/stock-return/:type', {templateUrl: 'js/view/partial/stock-return.html', controller: stockReturn.name})
                 .otherwise({redirectTo: '/gallery'});
         });
     }

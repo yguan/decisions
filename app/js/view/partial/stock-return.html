@@ -1,8 +1,8 @@
 <div ng-controller="StockReturnCtrl" class="visualization stock-return">
     <div class="btn btn-default" ng-click="back()"><span class="fa fa-arrow-left"></span> Back</div>
-    <div class="chart-title">Investment Return in S&P 500</div>
+    <div class="chart-title">{{chartTitle}}</div>
     <div class="input-group investment">
-        <span class="input-group-addon">Initial investment ($)</span>
+        <span class="input-group-addon">{{investmentLabel}}</span>
         <input type="number" class="form-control money" ng-model="initialInvestment" step="10000" min="0" autofocus="true">
         <span class="input-group-addon">Start investing in year</span>
         <input type="number" class="form-control year" ng-model="startYear" step="1" min="1970" max="2013">

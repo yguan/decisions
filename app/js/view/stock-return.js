@@ -7,7 +7,17 @@ define(function (require, exports, module) {
         stockReturn = require('data/stock-return-dw').stockReturn;
 
     exports.name = 'StockReturnCtrl';
-    exports.controller = function ($scope, $location) {
+    exports.controller = function ($scope, $location, $routeParams) {
+        var isDollarCostAveraging = $routeParams.type === 'dca';
+
+        if (isDollarCostAveraging) {
+            $scope.chartTitle = 'Dollar Cost Averaging Investment Return in S&P 500';
+            $scope.investmentLabel = 'Invest every year with $';
+        } else {
+            $scope.chartTitle = 'One-time Investment Return in S&P 500';
+            $scope.investmentLabel = 'Invest $';
+        }
+
         $scope.getId = function () {
             return $location.search().id;
         };
@@ -20,7 +30,7 @@ define(function (require, exports, module) {
         $scope.startYear = 1970;
 
         function filterStockReturn(initialInvestment, startYear) {
-            stockReturn.filterStockReturn(initialInvestment, startYear);
+            stockReturn.filterStockReturn(initialInvestment, startYear, isDollarCostAveraging);
             $scope.investmentReturn = stockReturn.data[stockReturn.data.length - 1].Investment;
         }
 

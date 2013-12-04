@@ -18,15 +18,18 @@ define(['exports', 'data/sp500-annual-return'], function (exports, sp500AnnualRe
         return (100 + percentChanged) / 100 * initialInvestment;
     }
 
-    function filterStockReturn(initialInvestment, startYear) {
+    function filterStockReturn(initialInvestment, startYear, isDollarCostAveraging) {
         var startIndex = _.findIndex(sp500Data, function (value) {
                 return value.Year >= startYear;
             }),
-            newData = sp500Data.slice(startIndex, sp500Data.length);
+            newData = sp500Data.slice(startIndex, sp500Data.length),
+            extraInvestmentEachYear = isDollarCostAveraging ? initialInvestment : 0;
 
         _.each(newData, function (value, index) {
             var preIndex = index - 1,
-                investment = preIndex < 0 ? initialInvestment : calculateInvestmentReturn(newData[preIndex].Investment, newData[preIndex].AnnualReturn);
+                investment = preIndex < 0
+                    ? initialInvestment
+                    : calculateInvestmentReturn(newData[preIndex].Investment + extraInvestmentEachYear, newData[preIndex].AnnualReturn);
             value.Investment = investment;
         });
 

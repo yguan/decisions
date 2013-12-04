@@ -4,11 +4,12 @@ define(function (require, exports, module) {
     'use strict';
 
     var chartUrl = {
-        stockReturn: '/stock-return'
+        stockReturnOneTime: '/stock-return/',
+        stockReturnDollarCostAvg: '/stock-return/dca'
     };
 
     exports.name = 'GalleryCtrl';
-    exports.controller = function ($scope, $location, $document, $timeout) {
+    exports.controller = function ($scope, $location, $routeParams, $document, $timeout) {
         function getVizUrl(vizId) {
             return chartUrl[vizId];
         }
@@ -22,7 +23,8 @@ define(function (require, exports, module) {
         };
 
         $scope.visualizations = [
-            {id: 'stockReturn', label: 'Investment Return in S&P 500', isLoading: false}
+            {id: 'stockReturnOneTime', label: 'One-time Investment Return in S&P 500', isLoading: false},
+            {id: 'stockReturnDollarCostAvg', label: 'Dollar Cost Averaging Investment Return in S&P 500', isLoading: false}
         ];
     };
 });
