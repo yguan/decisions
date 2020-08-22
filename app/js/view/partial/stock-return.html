@@ -5,8 +5,8 @@
         <span class="input-group-addon">{{investmentLabel}}</span>
         <input type="number" class="form-control money" ng-model="initialInvestment" step="10000" min="0" autofocus="true">
         <span class="input-group-addon">Start investing in year</span>
-        <input type="number" class="form-control year" ng-model="startYear" step="1" min="1970" max="2013">
-        <span class="input-group-addon">Result in investment total in 2013 ({{2013 - startYear + 1}} years): <b>${{investmentReturn | number:0}}</b></span>
+        <input type="number" class="form-control year" ng-model="startYear" step="1" min="1970" max="2019">
+        <span class="input-group-addon">Result in investment total in 2019 ({{2019 - startYear + 1}} years): <b>${{investmentReturn | number:0}}</b></span>
     </div>
     <div id="chart"></div>
 </div>

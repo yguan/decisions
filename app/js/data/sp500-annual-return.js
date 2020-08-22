@@ -1,6 +1,11 @@
 /*jslint nomen: true*/
 /*global $,define,require */
 
+// http://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/spearn.htm
+// https://www.thestreet.com/investing/annual-sp-500-returns-in-history
+// http://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/histretSP.html
+// http://www.econ.yale.edu/~shiller/data.htm
+
 define(function (require, exports, module) {
     'use strict';
 
@@ -47,8 +52,14 @@ define(function (require, exports, module) {
         {Year: 2009, AnnualReturn: 23.49, Dividend: 2.00, Inflation: -0.34},
         {Year: 2010, AnnualReturn: 12.64, Dividend: 1.84, Inflation: 1.64},
         {Year: 2011, AnnualReturn: 0.00, Dividend: 2.07, Inflation: 3.16},
-        {Year: 2012, AnnualReturn: 13.29, Dividend: 2.13, Inflation: 2.07},
-        {Year: 2013, AnnualReturn: 26.62, Dividend: 1.91, Inflation: 1.5}
+        {Year: 2012, AnnualReturn: 13.41, Dividend: 2.19, Inflation: 2.07},
+        {Year: 2013, AnnualReturn: 29.60, Dividend: 1.89, Inflation: 1.46},
+        {Year: 2014, AnnualReturn: 11.39, Dividend: 1.92, Inflation: 1.62},
+        {Year: 2015, AnnualReturn: -0.73, Dividend: 2.12, Inflation: 0.12},
+        {Year: 2016, AnnualReturn: 9.54, Dividend: 2.04, Inflation: 1.26},
+        {Year: 2017, AnnualReturn: 19.42, Dividend: 1.83, Inflation: 2.13},
+        {Year: 2018, AnnualReturn: -6.24, Dividend: 2.14, Inflation: 2.44},
+        {Year: 2019, AnnualReturn: 28.88, Dividend: 1.82, Inflation: 2.29},
     ];
     exports.data = data;
 });

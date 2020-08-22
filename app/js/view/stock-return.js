@@ -32,7 +32,7 @@ define(function (require, exports, module) {
         function filterStockReturn(initialInvestment, startYear) {
             stockReturn.filterStockReturn(initialInvestment, startYear, isDollarCostAveraging);
             $scope.investmentReturn = _.find(stockReturn.data,function (value) {
-                return value.Year === 2013;
+                return value.Year === stockReturn.lastYear;
             }).Investment;
         }
 

@@ -5,7 +5,11 @@ define(['exports', 'data/sp500-annual-return'], function (exports, sp500AnnualRe
     'use strict';
 
     var sp500Data = sp500AnnualReturn.data,
-        stockReturn = {};
+        lastYear = sp500Data[sp500Data.length - 1].Year,
+        stockReturn = {
+            lastYear: lastYear
+        };
+
     MicroEvent.mixin(stockReturn);
 
     function transformData(data) {
